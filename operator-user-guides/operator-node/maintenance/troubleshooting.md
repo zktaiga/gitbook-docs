@@ -66,17 +66,11 @@ Below, an example of the same report, from a node in bad state:
 
 * If your node is not participating in cluster consensus, please verify that the `Network` has the correct value for the blockchain you are trying to operate on.
 
-<!---->
-
-* Next, verify in the SSV node logs that the connection to execution and beacon node has been established.
-
-<!---->
+- Next, verify in the SSV node logs that the connection to execution and beacon node has been established.
 
 * If the SSV node logs don't report any errors, please verify the clients logs themselves. If the disk they are running on does not support fast IOPS, they might struggle to stay in sync with the blockchain
 
-<!---->
-
-* It is finally possible that the clients don't report any errors, but the issue persists. In this cases, try and re-sync execution and/or beacon client(s), to fix potential initialization issues.
+- It is finally possible that the clients don't report any errors, but the issue persists. In this cases, try and re-sync execution and/or beacon client(s), to fix potential initialization issues.
 
 </details>
 
@@ -250,8 +244,6 @@ docker logs ssv_node --follow
 
 </details>
 
-
-
 ## Common error/warning messages
 
 This section is a collection of common warnings, error messages, statuses and other unexpected behaviours you might encounter and the possible related known causes.
@@ -290,7 +282,7 @@ FATAL	could not setup operator private key	{"error": "Operator private key is no
 ```
 {% endcode %}
 
-Verify that the Operator Private Key is correctly set in [`config.yaml` configuration file](../installation.md#create-configuration-file). In particular, if using unencrypted (raw) keys, that the **private (secret) key** was copied in the configuration file and that it contains all characters (sometimes it contains a  `=`  character that can easily be left out).
+Verify that the Operator Private Key is correctly set in [`config.yaml` configuration file](../installation.md#create-configuration-file). In particular, if using unencrypted (raw) keys, that the **private (secret) key** was copied in the configuration file and that it contains all characters (sometimes it contains a `=` character that can easily be left out).
 
 If the node has been stopped and restart, verify that the same configuration has been applied, that the private key has not been changed, and that the `db.Path` configuration points to the same directory as before.
 
@@ -332,7 +324,7 @@ This error could be caused by using multiple SSV nodes within one Nimbus setup. 
 
 Please verify that the `MetricsAPIPort` variable is correctly set in [`config.yaml` configuration file](../installation.md#create-configuration-file).
 
-For a more in-depth guide on how to set up Node monitoring, refer to [the dedicated page in this section](monitoring.md).
+For a more in-depth guide on how to set up Node monitoring, refer to [the dedicated page in this section](broken-reference).
 
 ***
 
@@ -360,10 +352,13 @@ After updating your port, please restart the SSV node and confirm the error does
 
 ### `failed to check address`
 
-<pre class="language-bash" data-overflow="wrap"><code class="lang-bash">{"level":"debug","time":"2021-12-13T06:45:24.529069Z","caller":"p2p/discovery.go:56","message":"<a data-footnote-ref href="#user-content-fn-1">failed to check address</a>","app":"SSV-Node:v0.1.7","component":"p2p","id":"16Uiu2HAmQYHdvGW2rtCejsz3BCNJsoBWpD9Kd2NuZWRgGggkKg4h","addr":"220.158.208.20:13001","err":"IP address is not accessible: dial tcp 220.158.208.20:13000: i/o timeout"}
-</code></pre>
+{% code overflow="wrap" %}
+```bash
+{"level":"debug","time":"2021-12-13T06:45:24.529069Z","caller":"p2p/discovery.go:56","message":"failed to check address","app":"SSV-Node:v0.1.7","component":"p2p","id":"16Uiu2HAmQYHdvGW2rtCejsz3BCNJsoBWpD9Kd2NuZWRgGggkKg4h","addr":"220.158.208.20:13001","err":"IP address is not accessible: dial tcp 220.158.208.20:13000: i/o timeout"}
+```
+{% endcode %}
 
-Port 13000 is closed - please make sure it is open (on both docker and machine level) and restart your node.&#x20;
+Port 13000 is closed - please make sure it is open (on both docker and machine level) and restart your node.
 
 For confirmation, you should see `"Address was checked successfully"` message.
 
@@ -380,7 +375,7 @@ Steps to confirm you use the same key:
 
 1. Find the operator key that you have registered to the network in the [ssv explorer](https://explorer.ssv.network/).
 2. Find the operator public key you have generated in your node during setup.
-3. Compare between the keys -  if they do not match you must update your private key in the node config.yaml file, according to the key generated during your node installation.
+3. Compare between the keys - if they do not match you must update your private key in the node config.yaml file, according to the key generated during your node installation.
 
 {% hint style="info" %}
 `{"level":"info","time":"2021-12-13T06:45:14.466457Z","caller":"operator/storage.go:122","message":`**`"setup operator privateKey is DONE!"`**`,"app":"SSV-Node:v0.1.7","who":"operatorKeys","`**`public-key`**`":"`**`LS0tLS1CRUdJTiBSU0EgUFVCTElDIEtFWS0tLS0tCk1JSUJJakFOQmdrcWhraUc5dzBCQVFFRkFBT0NBUThBTUlJQkNnS0NBUUVBOHRXRG0xbTNtYW5Ra0xweVpLMzcKMGNHRGoydlBTWStRWVFBd3BWOXZpWThKVlgzT2J0VjNLL24xNy9peGZ2VEx5aGZKckgzYStpS1NIcDl5WEU4cQp6N2RhOTlaVzU4RzAyeDF0ZnpuV1REMmFpbklpMDAwdjQ5RjFTdzlYOUttQUg5VzNGdjBaREpadzZKVFd3R0ZiCmZiTmM2cGVvTG5ucnllWlVXb09ZQms0TVg2Um9QV2ZXNUJEaURaeHFqVjdvbFV3ZnFBMW5OeU96RXFCMEtkSW8KbExSZFA4ODZBNFJrZGpjUDc5aWdrM0RjVVdCMDhpZlM4SFlvS012ZUZrek0yR2dmOG5LRnFmSnFYNzlybFR4cApSTnlheUZOYXhZWEY4enBBMHlYRGFHQ0I1TitzZ1N2Yjg1WDAydWVCa1NadFFUMUMyTGMxWlZkbERFZVpGNFNlCkh3SURBUUFCCi0tLS0tRU5EIFJTQSBQVUJMSUMgS0VZLS0tLS0K`**`"}`
@@ -391,5 +386,3 @@ Steps to confirm you use the same key:
 {% hint style="info" %}
 Didn't find the answer you are looking for? Reach out to other network operators on our [Discord channel](https://discord.gg/ssvnetworkofficial)
 {% endhint %}
-
-[^1]: 

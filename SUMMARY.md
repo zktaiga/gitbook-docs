@@ -88,6 +88,7 @@
   * [Maintenance](operator-user-guides/operator-node/maintenance/README.md)
     * [Monitoring](operator-user-guides/operator-node/maintenance/monitoring.md)
     * [Troubleshooting](operator-user-guides/operator-node/maintenance/troubleshooting.md)
+    * [Metrics Index](operator-user-guides/operator-node/maintenance/metrics-index.md)
   * [Enabling DKG](operator-user-guides/operator-node/enabling-dkg.md)
   * [Node Configuration Reference](operator-user-guides/operator-node/node-configuration-reference.md)
   * [Node migration](operator-user-guides/operator-node/node-migration.md)

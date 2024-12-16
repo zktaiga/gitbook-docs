@@ -34,7 +34,7 @@ In order to set up your nodes and register your operators to the network, follow
 
 1. [Install operator node](../../operator-user-guides/operator-node/installation.md)
 2. [Register operator](../../operator-user-guides/operator-management/registration.md)
-3. [Monitor node via Grafana](../../operator-user-guides/operator-node/maintenance/monitoring.md) (OPTIONAL but recommended)
+3. [Monitor node via Grafana](broken-reference) (OPTIONAL but recommended)
 
 ### Validator Onboarding
 
@@ -63,7 +63,7 @@ $$
 Legend:
 
 * $$O1...4_{fee}$$ - operator fee ($SSV per block)
-* $$N_{fee}$$ - [network fee](../../learn/protocol-overview/tokenomics/fees.md#\_k4tw9to38r3v) ($SSV per block)​
+* $$N_{fee}$$ - [network fee](../../learn/protocol-overview/tokenomics/fees.md#_k4tw9to38r3v) ($SSV per block)​
 * $$Period$$ - operation period (blocks)
 * $$LTP$$ - [liquidation threshold period](../../learn/protocol-overview/tokenomics/liquidations.md#liquidation-risk)
 
@@ -82,7 +82,7 @@ To manage account balance, the staking service can deposit or withdraw funds fro
 * [Deposit](../smart-contracts/ssvnetwork.md#public-deposit-owner-operatorids-amount-cluster)
 * [Withdraw](../smart-contracts/ssvnetwork.md#public-withdraw-operatorids-amount-cluster)
 
-#### Validator Management&#x20;
+#### Validator Management
 
 Validators are fully customizable in the ssv.network, giving service providers more flexibility and control over their operations. Having the ability to update the operator group managing your validators can be useful when you want to spin up an additional operator or use another operator’s services. Additionally, being able to offboard a validator can help if one of your users wants to stop their validator operation or migrate to a different service.
 

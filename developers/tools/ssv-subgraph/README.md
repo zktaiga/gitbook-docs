@@ -5,7 +5,7 @@ The Graph is a decentralized indexing protocol for the Ethereum (and other EVM-c
 The Graph can be used for querying data related to the SSV protocol and develop applications on top of it.
 
 {% hint style="warning" %}
-### New to GraphQL?
+#### New to GraphQL?
 
 Before diving into subgraph queries, get familiar with GraphQL basics: [Learn GraphQL](https://graphql.org/learn/)
 {% endhint %}
