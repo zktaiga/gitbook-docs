@@ -4,7 +4,7 @@ This document provides details of metrics collected, including their types, desc
 
 ### Table of Contents
 
-* otel\_scope\_info
+* [otel\_scope\_info](metrics-index.md#otel_scope_info)
 * ssv\_cl\_request\_duration\_seconds\_bucket
 * ssv\_cl\_request\_duration\_seconds\_count
 * ssv\_cl\_request\_duration\_seconds\_sum
