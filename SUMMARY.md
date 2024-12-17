@@ -87,6 +87,7 @@
   * [Configuring MEV](operator-user-guides/operator-node/configuring-mev.md)
   * [Maintenance](operator-user-guides/operator-node/maintenance/README.md)
     * [Monitoring](operator-user-guides/operator-node/maintenance/monitoring.md)
+    * [SSV Node Runbook](operator-user-guides/operator-node/maintenance/ssv-node-runbook.md)
     * [Troubleshooting](operator-user-guides/operator-node/maintenance/troubleshooting.md)
     * [Metrics Index](operator-user-guides/operator-node/maintenance/metrics-index.md)
   * [Enabling DKG](operator-user-guides/operator-node/enabling-dkg.md)
